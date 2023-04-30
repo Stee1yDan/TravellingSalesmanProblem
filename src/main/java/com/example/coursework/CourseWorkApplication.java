@@ -57,7 +57,6 @@ public class CourseWorkApplication
 //    {
 //        return args ->
 //        {
-
 //            for (int i = 0; i < 100; i++)
 //            {
 //                Node node = new Node(random.nextInt(1000), random.nextInt(1000));
