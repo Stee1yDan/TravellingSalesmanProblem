@@ -46,7 +46,7 @@ public class NodeRepository
         {
             path += calculateDistance(i, i+1);
         }
-        return path;
+        return path + calculateDistance(0,repository.size() - 1);
     }
 
     public void shuffleList()
