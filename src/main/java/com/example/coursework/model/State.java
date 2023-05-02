@@ -14,16 +14,11 @@ public class State
 {
     private final NodeRepository nodeRepository;
     private double energy;
-
     Random random = new Random();
 
     public State(NodeRepository nodeRepository)
     {
         this.nodeRepository = nodeRepository;
-
-//        int size = nodeRepository.getSize();
-//        nodeRepository.swapNodes(random.nextInt(size), random.nextInt(size));
-
         nodeRepository.shuffleList();
         energy = nodeRepository.calculatePathDistance();
     }
