@@ -11,6 +11,6 @@ To engage with this application, it is necessary to use the @RestController
 
 Input nodes are added through @RequestBody in POST request to "/api".
 
-List of active nodes can be obtained through GET request to "/api"'
+List of active nodes can be obtained through GET request to "/api".
 
-Result is avaible through GET request in "/api/result"
+Result is avaible through GET request to "/api/result".
