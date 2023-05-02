@@ -64,7 +64,6 @@ public class DecisionMaker
 
     private double getProbability(double deltaEnergy)
     {
-
         return Math.exp(-deltaEnergy / temperature);
     }
 }
