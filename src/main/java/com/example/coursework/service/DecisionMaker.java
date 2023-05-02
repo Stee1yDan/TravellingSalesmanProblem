@@ -59,7 +59,7 @@ public class DecisionMaker
 
     private void decreaseTemperature()
     {
-        temperature -= temperatureConst;
+        temperature *= temperatureConst;
     }
 
     private double getProbability(double deltaEnergy)
