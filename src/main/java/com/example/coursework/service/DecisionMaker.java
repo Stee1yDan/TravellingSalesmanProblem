@@ -4,11 +4,12 @@ import com.example.coursework.model.State;
 import com.example.coursework.repository.NodeRepository;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
 @Scope("singleton")
-@Component
+@Service
 public class DecisionMaker
 {
     private double temperature = 600;
@@ -59,7 +60,7 @@ public class DecisionMaker
 
     private void decreaseTemperature()
     {
-        temperature *= temperatureConst;
+        temperature -= temperatureConst;
     }
 
     private double getProbability(double deltaEnergy)
