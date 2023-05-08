@@ -3,7 +3,7 @@ package com.example.coursework.controller;
 import com.example.coursework.model.Node;
 import com.example.coursework.model.State;
 import com.example.coursework.repository.NodeRepository;
-import com.example.coursework.service.DecisionMaker;
+import com.example.coursework.service.NodeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +14,7 @@ import java.util.List;
 public class Controller
 {
     private final NodeRepository nodeRepository = new NodeRepository();
-    private final DecisionMaker decisionMaker = new DecisionMaker(nodeRepository);
+    private final NodeService nodeService = new NodeService(nodeRepository);
     @PostMapping
     public ResponseEntity<Void> insertNode(@RequestBody List<Node> nodeList)
     {
@@ -31,7 +31,7 @@ public class Controller
     @GetMapping("/result")
     public State getResult()
     {
-        return decisionMaker.startSimulatedAnnealing();
+        return nodeService.startSimulatedAnnealing();
     }
 //
 }

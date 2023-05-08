@@ -13,20 +13,4 @@ public class CourseWorkApplication
         SpringApplication.run(CourseWorkApplication.class, args);
     }
 
-
-//    @Bean
-//    CommandLineRunner runner()
-//    {
-//        return args ->
-//        {
-//            for (int i = 0; i < 100; i++)
-//            {
-//                Node node = new Node(random.nextInt(1000), random.nextInt(1000));
-//                nodeRepository.save(node);
-//            }
-//
-//            decisionMaker.startSimulatedAnnealing();
-//        };
-//    }
-
 }

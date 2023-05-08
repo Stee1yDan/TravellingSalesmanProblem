@@ -3,14 +3,13 @@ package com.example.coursework.service;
 import com.example.coursework.model.State;
 import com.example.coursework.repository.NodeRepository;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
 @Scope("singleton")
 @Service
-public class DecisionMaker
+public class NodeService
 {
     private double temperature = 600;
     private double minTemperature = 10;
@@ -19,7 +18,7 @@ public class DecisionMaker
 
     Random random = new Random();
 
-    public DecisionMaker(NodeRepository nodeRepository)
+    public NodeService(NodeRepository nodeRepository)
     {
         this.nodeRepository = nodeRepository;
     }
