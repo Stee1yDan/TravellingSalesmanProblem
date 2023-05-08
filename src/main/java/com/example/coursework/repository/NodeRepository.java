@@ -68,4 +68,20 @@ public class NodeRepository
     {
         repository = nodeList;
     }
+
+    public void deleteNode(int id)
+    {
+        repository.remove(id);
+    }
+
+    public void updateNode(int id, Node newNode)
+    {
+        repository.set(id,newNode);
+    }
+
+    public void addNode(Node newNode)
+    {
+        repository.add(newNode);
+    }
 }
+
