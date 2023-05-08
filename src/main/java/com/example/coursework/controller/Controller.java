@@ -33,5 +33,10 @@ public class Controller
     {
         return nodeService.startSimulatedAnnealing();
     }
-//
+
+    @GetMapping("/path")
+    public List<Node> getPath()
+    {
+        return nodeRepository.findAll();
+    }
 }

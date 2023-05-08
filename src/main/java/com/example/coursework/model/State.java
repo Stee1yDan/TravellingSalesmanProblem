@@ -14,8 +14,6 @@ public class State
 {
     private final NodeRepository nodeRepository;
     private double energy;
-    Random random = new Random();
-
     public State(NodeRepository nodeRepository)
     {
         this.nodeRepository = nodeRepository;

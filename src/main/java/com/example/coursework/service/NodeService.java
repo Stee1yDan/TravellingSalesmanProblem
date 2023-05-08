@@ -7,16 +7,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
-@Scope("singleton")
 @Service
+@Scope("singleton")
 public class NodeService
 {
     private double temperature = 600;
     private double minTemperature = 10;
     private final double temperatureConst = 0.5;
     private final NodeRepository nodeRepository;
-
-    Random random = new Random();
 
     public NodeService(NodeRepository nodeRepository)
     {
@@ -27,7 +25,7 @@ public class NodeService
     {
         State state = new State(nodeRepository);
 
-        for (int i = 1; temperature > minTemperature; i++)
+        while (temperature > minTemperature)
         {
             State nextState = new State(nodeRepository);
 

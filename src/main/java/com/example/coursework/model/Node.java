@@ -5,17 +5,14 @@ import lombok.Data;
 @Data
 public class Node
 {
-    static int id = 0;
-
     int nodeId;
     int x;
     int y;
 
-    public Node(int x, int y)
+    public Node(int x, int y, int nodeId)
     {
-        nodeId = id;
+        this.nodeId = nodeId;
         this.x = x;
         this.y = y;
-        id++;
     }
 }
