@@ -23,11 +23,12 @@ public class NodeService
 
     public State startSimulatedAnnealing()
     {
-        State state = new State(nodeRepository);
+        State state = new State(nodeRepository.calculatePathDistance());
 
         while (temperature > minTemperature)
         {
-            State nextState = new State(nodeRepository);
+            nodeRepository.shuffle();
+            State nextState = new State(nodeRepository.calculatePathDistance());
 
             System.out.println("Current energy " + state.getEnergy());
             System.out.println("next state energy " + nextState.getEnergy());

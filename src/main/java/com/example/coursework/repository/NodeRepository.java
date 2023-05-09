@@ -21,7 +21,6 @@ public class NodeRepository
 
     public List<Node> findAll()
     {
-        repository.forEach(System.out::println);
         return repository;
     }
 
@@ -44,12 +43,12 @@ public class NodeRepository
 
         for (int i = 0; i < size; i++)
         {
-            path += calculateDistance(i, i+1);
+            path += calculateDistance(i, i + 1);
         }
-        return path + calculateDistance(0,repository.size() - 1);
+        return path + calculateDistance(0, repository.size() - 1);
     }
 
-    public void shuffleList()
+    public void shuffle()
     {
         Collections.shuffle(repository);
     }
@@ -74,14 +73,15 @@ public class NodeRepository
         repository.remove(id);
     }
 
-    public void updateNode(int id, Node newNode)
+    public void getNode(int id)
     {
-        repository.set(id,newNode);
+        repository.get(id);
     }
 
-    public void addNode(Node newNode)
+    public void updateNode(int id, Node newNode)
     {
-        repository.add(newNode);
+        repository.set(id, newNode);
     }
+
 }
 

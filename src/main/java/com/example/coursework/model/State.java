@@ -5,19 +5,12 @@ import lombok.Data;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.util.Random;
-
 @Data
-@Component
-@Scope("prototype")
 public class State
 {
-    private final NodeRepository nodeRepository;
     private double energy;
-    public State(NodeRepository nodeRepository)
+    public State(double energy)
     {
-        this.nodeRepository = nodeRepository;
-        nodeRepository.shuffleList();
-        energy = nodeRepository.calculatePathDistance();
+        this.energy = energy;
     }
 }
