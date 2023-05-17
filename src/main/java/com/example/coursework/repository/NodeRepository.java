@@ -14,11 +14,6 @@ public class NodeRepository
 {
     private List<Node> repository = new ArrayList<>();
 
-    public void save(Node node)
-    {
-        repository.add(node);
-    }
-
     public List<Node> findAll()
     {
         return repository;
@@ -52,36 +47,9 @@ public class NodeRepository
     {
         Collections.shuffle(repository);
     }
-
-    public void swapNodes(int id1, int id2)
-    {
-        Collections.swap(repository, id1, id2);
-    }
-
-    public int getSize()
-    {
-        return repository.size();
-    }
-
     public void reassignRepository(List<Node> nodeList)
     {
         repository = nodeList;
     }
-
-    public void deleteNode(int id)
-    {
-        repository.remove(id);
-    }
-
-    public void getNode(int id)
-    {
-        repository.get(id);
-    }
-
-    public void updateNode(int id, Node newNode)
-    {
-        repository.set(id, newNode);
-    }
-
 }
 
