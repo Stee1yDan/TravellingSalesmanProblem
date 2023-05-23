@@ -8,7 +8,12 @@ The TSP has applications in a wide range of fields, including logistics, transpo
 
 ![lead_large](https://github.com/Stee1yDan/TravellingSalesmanProblem/assets/125751951/a558b476-88bc-416c-9437-939f646a4cdc)
 
-Solution for Travelling Salesman Problem using simulated annealing.
+## Simulated Annealing
+Simulated annealing is a probabilistic optimization algorithm that starts with an initial solution and iteratively improves it by randomly choosing a solution from the neighboring set and deciding whether to accept or reject it. The probability of accepting a new solution is determined by a temperature parameter that is gradually decreased during the optimization process.
+
+The simulated annealing algorithm is designed in such a way that it is capable of escaping from local optima and finding global optima. This ability makes it particularly useful for solving problems that are difficult to solve using traditional optimization methods.
+
+## RestController
 To engage with this application, it is necessary to use the @RestController
 
 Input nodes are added through @RequestBody in POST request to "/api".
