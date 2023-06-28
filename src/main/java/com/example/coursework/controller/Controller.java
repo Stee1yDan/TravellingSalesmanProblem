@@ -2,8 +2,10 @@ package com.example.coursework.controller;
 
 import com.example.coursework.model.Node;
 import com.example.coursework.model.State;
-import com.example.coursework.repository.NodeRepository;
 import com.example.coursework.service.NodeService;
+import com.example.coursework.service.SimulatedAnnealingService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,24 +15,31 @@ import java.util.List;
 @RequestMapping("/api")
 public class Controller
 {
-    private final NodeRepository nodeRepository = new NodeRepository();
-    private final NodeService nodeService = new NodeService(nodeRepository);
-    @PostMapping
-    public ResponseEntity<Void> insertNode(@RequestBody List<Node> nodeList)
+    private final NodeService nodeService;
+    private final SimulatedAnnealingService simulatedAnnealingService;
+
+    public Controller(NodeService nodeService, SimulatedAnnealingService simulatedAnnealingService)
     {
-        nodeRepository.reassignRepository(nodeList);
+        this.nodeService = nodeService;
+        this.simulatedAnnealingService = simulatedAnnealingService;
+    }
+
+    @PostMapping
+    public ResponseEntity<Void> insertNodes(@RequestBody List<Node> nodeList)
+    {
+        nodeService.insertNodes(nodeList);
         return ResponseEntity.ok().build();
     }
 
     @GetMapping
-    public List<Node> getNodeList()
+    public ResponseEntity<List<Node>> getNodeList()
     {
-        return nodeRepository.findAll();
+        return new ResponseEntity<>(nodeService.getNodeList(), HttpStatus.OK);
     }
 
     @GetMapping("/result")
-    public State getResult()
+    public ResponseEntity<State> getResult()
     {
-        return nodeService.startSimulatedAnnealing();
+        return new ResponseEntity<>(simulatedAnnealingService.startSimulatedAnnealing(), HttpStatus.OK);
     }
 }
