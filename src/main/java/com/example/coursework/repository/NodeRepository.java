@@ -7,12 +7,14 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 @Repository
 @Scope("singleton")
 public class NodeRepository
 {
     private List<Node> repository = new ArrayList<>();
+    Random random = new Random();
 
     public List<Node> findAll()
     {
@@ -45,7 +47,7 @@ public class NodeRepository
 
     public void shuffle()
     {
-        Collections.shuffle(repository);
+        Collections.swap(repository, random.nextInt(repository.size()), random.nextInt(repository.size()));
     }
     public void reassignRepository(List<Node> nodeList)
     {
