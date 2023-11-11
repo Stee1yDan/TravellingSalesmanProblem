@@ -27,4 +27,5 @@ public class NodeService
     {
         nodeRepository.reassignRepository(nodeList);
     }
+    public int getSize() {return nodeRepository.getSize();};
 }

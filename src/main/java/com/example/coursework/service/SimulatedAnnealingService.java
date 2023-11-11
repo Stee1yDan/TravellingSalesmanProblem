@@ -11,7 +11,7 @@ public class SimulatedAnnealingService
 {
     private double temperature = 600;
     private double minTemperature = 10;
-    private final double temperatureConst = 0.5;
+    private final double temperatureConst = 0.05;
     private final NodeRepository nodeRepository;
 
     public SimulatedAnnealingService(NodeRepository nodeRepository)
@@ -50,6 +50,8 @@ public class SimulatedAnnealingService
 
             decreaseTemperature();
         }
+
+        temperature = 600;
 
         return state;
     }

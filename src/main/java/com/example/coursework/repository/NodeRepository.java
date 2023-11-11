@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Random;
 
 @Repository
-@Scope("singleton")
 public class NodeRepository
 {
     private List<Node> repository = new ArrayList<>();
@@ -53,5 +52,8 @@ public class NodeRepository
     {
         repository = nodeList;
     }
+    public int getSize() {return repository.size();}
+    public Node getElement(int i) {return repository.get(i);}
+    public void setElement(int i, Node node) {repository.set(i, node);}
 }
 
